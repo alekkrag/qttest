@@ -3,7 +3,9 @@
 
 namespace App\Controller;
 
-class Logout extends BaseController
+use App\Lib\BaseActionInterface;
+
+class Logout extends BaseController implements BaseActionInterface
 {
 
     public function indexAction()

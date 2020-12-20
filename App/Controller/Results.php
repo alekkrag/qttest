@@ -4,7 +4,9 @@
 namespace App\Controller;
 
 
-class Results extends BaseController
+use App\Lib\BaseActionInterface;
+
+class Results extends BaseController implements BaseActionInterface
 {
 
     public function indexAction()

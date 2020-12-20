@@ -3,7 +3,9 @@
 
 namespace App\Controller;
 
-class Register extends BaseController
+use App\Lib\BaseActionInterface;
+
+class Register extends BaseController implements BaseActionInterface
 {
     public function indexAction()
     {

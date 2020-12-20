@@ -3,8 +3,9 @@
 
 namespace App\Controller;
 
+use App\Lib\BaseActionInterface;
 
-class Home extends BaseController
+class Home extends BaseController implements BaseActionInterface
 {
     public function indexAction()
     {
