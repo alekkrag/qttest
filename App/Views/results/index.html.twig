@@ -1,0 +1,22 @@
+{% extends 'layouts/index.html.twig' %}
+
+{% block content %}
+    <div id="catalogue">
+        {% if session.user_login is not empty %}
+            {% if users is not empty %}
+                <ul>
+                    {% for user in users %}
+                        <li>
+                            <div>{{ user.name }}</div>
+                            <div>{{ user.email }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                No result for this search filter
+            {% endif %}
+        {% else %}
+            Not loged in
+        {% endif %}
+    </div>
+{% endblock content %}
