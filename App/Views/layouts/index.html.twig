@@ -1,0 +1,14 @@
+{% extends 'layouts/master.html.twig' %}
+{% block body %}
+    <!-- START TEMPLATE FILE app/views/layouts/frontend/index.html.twig -->
+    <div class="container">
+        {% include 'util/header.html.twig' %}
+        <!-- Begin page content -->
+        <main role="main" class="container">
+            {% block content %}
+                <h1 class="mt-5">Welcome to QTX {% if session.user_login %} {{ session.user_login }}{% endif %}</h1>
+            {% endblock content %}
+        </main>
+    </div>
+    <!-- END TEMPLATE FILE app/views/layouts/frontend/index.html.twig -->
+{% endblock body %}

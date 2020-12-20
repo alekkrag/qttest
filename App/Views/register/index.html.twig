@@ -1,0 +1,47 @@
+{% extends 'layouts/index.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                {% if session.user_register_error %}
+                    {% if session.user_register_error|length > 0 %}
+                        {% for error_single in session.user_register_error %}
+                            {{ error_single }}
+                        {% endfor %}
+                    {% else %}
+                        <h1>{{ session.user_register_error }}</h1>
+                    {% endif %}
+                {% endif %}
+                <div class="card-body">
+                    <form action="registerSubmit" class="form-signin" method="post">
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                                   name="email" required
+                                   autofocus>
+                            <label for="inputEmail">Email address</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" id="inputName" class="form-control" placeholder="Name" name="name"
+                                   required
+                                   autofocus>
+                            <label for="inputEmail">Name</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                   name="password" minlength="6" required>
+                            <label for="inputPassword">Password</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" id="inputPasswordRepeat" class="form-control"
+                                   placeholder="Password Repeat" name="confirm_password" required>
+                            <label for="inputPasswordRepeat">Password Repeat</label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}
